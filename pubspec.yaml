@@ -1,0 +1,19 @@
+name: flutter_suika_game
+description: "A new Flutter project."
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+dependencies:
+  flame: ^1.12.0
+  flame_forge2d: ^0.16.0+2
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pedantic_mono: ^1.25.0
+
+flutter:
+  uses-material-design: true
