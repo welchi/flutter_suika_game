@@ -9,6 +9,8 @@ dependencies:
   flame_forge2d: ^0.16.0+2
   flutter:
     sdk: flutter
+  get_it: ^7.6.4
+  uuid: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +19,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
