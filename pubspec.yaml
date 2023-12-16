@@ -9,15 +9,29 @@ dependencies:
   flame_forge2d: ^0.16.0+2
   flutter:
     sdk: flutter
+  freezed_annotation: ^2.4.1
   get_it: ^7.6.4
   uuid: ^4.2.1
 
 dev_dependencies:
+  build_runner: ^2.4.7
+  flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
+  freezed: ^2.4.6
   pedantic_mono: ^1.25.0
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
+
+flutter_launcher_icons:
+  android: false
+  ios: false
+  web:
+    generate: true
+    image_path: "assets/images/watermelon.png"
+    background_color: "#FFFFFF"
+    theme_color: "#FFFFFF"

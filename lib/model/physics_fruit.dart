@@ -10,28 +10,32 @@ class PhysicsFruit extends BodyComponent {
   PhysicsFruit({
     required this.fruit,
     this.isStatic = false,
-  }) : super(paint: fruit.color.paint());
+    this.overrideRadius,
+  }) : super(
+          paint: BasicPalette.transparent.paint(),
+        );
 
   final Fruit fruit;
   final bool isStatic;
+  final double? overrideRadius;
 
   late final SpriteComponent _spriteComponent;
 
   @override
   Future<void> onLoad() async {
     await super.onLoad();
-    // final sprite = await Sprite.load('smile.png');
-    // _spriteComponent = SpriteComponent(
-    //   sprite: sprite,
-    //   size: Vector2.all(fruit.radius * 2),
-    //   anchor: Anchor.center,
-    // );
-    // add(_spriteComponent);
+    final sprite = await Sprite.load(fruit.image);
+    _spriteComponent = SpriteComponent(
+      sprite: sprite,
+      size: Vector2.all((overrideRadius ?? fruit.radius) * 2),
+      anchor: Anchor.center,
+    );
+    add(_spriteComponent);
   }
 
   @override
   Body createBody() {
-    final shape = CircleShape()..radius = fruit.radius;
+    final shape = CircleShape()..radius = overrideRadius ?? fruit.radius;
 
     final fixtureDef = FixtureDef(
       shape,
